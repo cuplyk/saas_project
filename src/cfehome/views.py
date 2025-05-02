@@ -6,7 +6,15 @@ import pathlib
 
 this_dir = pathlib.Path(__file__).resolve().parent
 
-def home_page_views(request, *args, **kwargs):
+def home_views(request, *args, **kwargs):
+    """
+    This function handles the home page view.
+    It returns a simple HTML response with a welcome message.
+    """
+    return about_views(request, *args, **kwargs)
+
+
+def about_views(request, *args, **kwargs):
     """
     This function handles the home page view.
     It returns a simple HTML response with a welcome message.
