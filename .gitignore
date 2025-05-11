@@ -3,6 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignore vendor static files
+/workspaces/saas_project/src/staticfiles
+
+
+# ignore local_sdn files root
+/local_sdn
+
+
+
 # C extensions
 *.so
 

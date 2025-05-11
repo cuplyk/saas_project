@@ -141,8 +141,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# settings.py
+
 STATIC_URL = "static/"
 
+# Directories for local development
+STATICFILES_BASE_DIR = BASE_DIR / "staticfiles"
+STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR / "vendors"
+
+# Where Django looks for static files in development
+STATICFILES_DIRS = [
+    STATICFILES_VENDOR_DIR,  # e.g., <project_root>/staticfiles/vendors/
+]
+
+# Set STATIC_ROOT based on environment
+STATIC_ROOT = BASE_DIR.parent / "local_cdn"
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR / "prod_cdn" 
+
+
+    
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
