@@ -17,7 +17,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
+# Quick-start development settings - unsuitable for productionW
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # my apps
     "visits",
+    "commando",
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,9 @@ STATIC_URL = "static/"
 
 # Directories for local development
 STATICFILES_BASE_DIR = BASE_DIR / "staticfiles"
+STATICFILES_BASE_DIR.mkdir(exist_ok=True, parents=True)
+# Directory for vendor static files
+# This is where the vendor static files will be downloaded
 STATICFILES_VENDOR_DIR = STATICFILES_BASE_DIR / "vendors"
 
 # Where Django looks for static files in development
