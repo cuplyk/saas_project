@@ -15,6 +15,8 @@ VENDOR_STATICFILES = {
 
 
 class Command(BaseCommand):
+    
+    """Download vendor static files from CDN to local storage."""
 
     def handle(self, *args: Any, **options: Any):
         self.stdout.write("Downloading vendor static files")
