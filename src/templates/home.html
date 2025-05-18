@@ -7,6 +7,7 @@
 {% block content %}
     <h1>{{ page_title }}</h1>
     <p>This is the home page of your application.</p>
+    {% include 'snippets/welcome-user-msg.html' %}
     <p>Current user: {{ request.user }}</p>
     <p>Request method: {{ request.method }}</p>
     <p>User authenticated: {{ request.user.is_authenticated }}</p>

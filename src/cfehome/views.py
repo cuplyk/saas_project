@@ -19,6 +19,9 @@ def about_views(request, *args, **kwargs):
     This function handles the home page view.
     It returns a simple HTML response with a welcome message.
     """
+    if request.user.is_authenticated:
+        print(request.user.first_name)
+        
     
     qs = PageVisit.objects.all()
     page_qs = PageVisit.objects.filter(path=request.path)
