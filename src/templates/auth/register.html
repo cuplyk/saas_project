@@ -14,3 +14,327 @@
     </form>
 
 {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Training Plan Service | Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff5a5f 0%, #484848 100%);
+        }
+        
+        .input-focus:focus {
+            border-color: #ff5a5f;
+            box-shadow: 0 0 0 2px rgba(255, 90, 95, 0.2);
+        }
+        
+        .toggle-option {
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-option.active {
+            background-color: #ff5a5f;
+            color: white;
+        }
+        
+        .register-btn:hover {
+            background-color: #e04a4f;
+        }
+        
+        .role-card {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .role-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .role-card.selected {
+            border-color: #ff5a5f;
+            background-color: rgba(255, 90, 95, 0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .register-container {
+                width: 90%;
+                margin-top: 2rem;
+            }
+            
+            .role-selection {
+                flex-direction: column;
+            }
+            
+            .role-card {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="register-container bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-2xl">
+        <!-- Header Section -->
+        <div class="gradient-bg text-white p-8 text-center">
+            <h1 class="text-3xl font-bold mb-2">Personal Training Plan Service</h1>
+            <p class="opacity-90">Join our fitness community today</p>
+        </div>
+        
+        <!-- Registration Form -->
+        <div class="p-8">
+            <form id="register-form">
+                <!-- Role Selection -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">I am registering as:</h2>
+                    <div class="role-selection flex justify-between gap-4">
+                        <div class="role-card selected w-1/2 p-6 rounded-lg border cursor-pointer" id="coach-card">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                                    <i class="fas fa-user-tie text-red-500 text-2xl"></i>
+                                </div>
+                                <h3 class="font-medium text-gray-800">Coach</h3>
+                                <p class="text-sm text-gray-500 mt-1">Create and manage training plans for athletes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="role-card w-1/2 p-6 rounded-lg border cursor-pointer" id="athlete-card">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                                    <i class="fas fa-running text-blue-500 text-2xl"></i>
+                                </div>
+                                <h3 class="font-medium text-gray-800">Athlete</h3>
+                                <p class="text-sm text-gray-500 mt-1">Follow personalized training plans from coaches</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="user-type" value="coach">
+                </div>
+                
+                <!-- Personal Information -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Personal Information</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="first-name" class="block text-gray-700 font-medium mb-2">First Name</label>
+                            <input type="text" id="first-name" class="w-full px-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="John" required>
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-gray-700 font-medium mb-2">Last Name</label>
+                            <input type="text" id="last-name" class="w-full px-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="Doe" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Account Information -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Account Information</h2>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" class="w-full pl-10 pr-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input type="password" id="password" class="w-full pl-10 pr-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="••••••••" required>
+                            <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600" id="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Minimum 8 characters with at least one number</p>
+                    </div>
+                    
+                    <div>
+                        <label for="confirm-password" class="block text-gray-700 font-medium mb-2">Confirm Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input type="password" id="confirm-password" class="w-full pl-10 pr-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Fields for Coaches -->
+                <div id="coach-fields" class="mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Coach Information</h2>
+                    <div class="mb-4">
+                        <label for="specialization" class="block text-gray-700 font-medium mb-2">Specialization</label>
+                        <select id="specialization" class="w-full px-4 py-3 border rounded-lg input-focus focus:outline-none">
+                            <option value="">Select your specialization</option>
+                            <option value="strength">Strength Training</option>
+                            <option value="endurance">Endurance</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="rehabilitation">Rehabilitation</option>
+                            <option value="sports-specific">Sports Specific</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="certifications" class="block text-gray-700 font-medium mb-2">Certifications</label>
+                        <textarea id="certifications" class="w-full px-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="List your certifications (separated by commas)" rows="2"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Additional Fields for Athletes -->
+                <div id="athlete-fields" class="mb-6 hidden">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Athlete Information</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="fitness-level" class="block text-gray-700 font-medium mb-2">Fitness Level</label>
+                            <select id="fitness-level" class="w-full px-4 py-3 border rounded-lg input-focus focus:outline-none">
+                                <option value="">Select your level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="primary-goal" class="block text-gray-700 font-medium mb-2">Primary Goal</label>
+                            <select id="primary-goal" class="w-full px-4 py-3 border rounded-lg input-focus focus:outline-none">
+                                <option value="">Select your goal</option>
+                                <option value="weight-loss">Weight Loss</option>
+                                <option value="muscle-gain">Muscle Gain</option>
+                                <option value="endurance">Endurance</option>
+                                <option value="strength">Strength</option>
+                                <option value="rehabilitation">Rehabilitation</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Terms and Conditions -->
+                <div class="flex items-start mb-6">
+                    <div class="flex items-center h-5">
+                        <input id="terms" type="checkbox" class="h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 rounded" required>
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="terms" class="font-medium text-gray-700">I agree to the <a href="#" class="text-red-500 hover:text-red-700">Terms of Service</a> and <a href="#" class="text-red-500 hover:text-red-700">Privacy Policy</a></label>
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-red-500 text-white py-3 px-4 rounded-lg font-medium register-btn transition duration-300 mb-4">
+                    Create Account
+                </button>
+                
+                <div class="text-center">
+                    <p class="text-gray-600">Already have an account? <a href="#" class="text-red-500 font-medium hover:text-red-700">Log in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Role selection
+        const coachCard = document.getElementById('coach-card');
+        const athleteCard = document.getElementById('athlete-card');
+        const userTypeInput = document.getElementById('user-type');
+        const coachFields = document.getElementById('coach-fields');
+        const athleteFields = document.getElementById('athlete-fields');
+        
+        coachCard.addEventListener('click', () => {
+            coachCard.classList.add('selected');
+            athleteCard.classList.remove('selected');
+            userTypeInput.value = 'coach';
+            coachFields.classList.remove('hidden');
+            athleteFields.classList.add('hidden');
+        });
+        
+        athleteCard.addEventListener('click', () => {
+            athleteCard.classList.add('selected');
+            coachCard.classList.remove('selected');
+            userTypeInput.value = 'athlete';
+            athleteFields.classList.remove('hidden');
+            coachFields.classList.add('hidden');
+        });
+        
+        // Toggle password visibility
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('toggle-password');
+        const eyeIcon = togglePassword.querySelector('i');
+        
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            if (type === 'password') {
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            } else {
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            }
+        });
+        
+        // Form validation and submission
+        const registerForm = document.getElementById('register-form');
+        
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const userType = userTypeInput.value;
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // Simple validation
+            if (password !== confirmPassword) {
+                alert("Passwords don't match!");
+                return;
+            }
+            
+            // Collect role-specific data
+            let roleData = {};
+            if (userType === 'coach') {
+                roleData = {
+                    specialization: document.getElementById('specialization').value,
+                    certifications: document.getElementById('certifications').value
+                };
+            } else {
+                roleData = {
+                    fitnessLevel: document.getElementById('fitness-level').value,
+                    primaryGoal: document.getElementById('primary-goal').value
+                };
+            }
+            
+            // Here you would typically send the data to your backend
+            console.log({
+                userType,
+                firstName,
+                lastName,
+                email,
+                password,
+                ...roleData
+            });
+            
+            // For demo purposes, we'll just show an alert
+            alert(`Account created successfully as ${userType === 'coach' ? 'Coach' : 'Athlete'}!`);
+        });
+    </script>
+</body>
+</html>
