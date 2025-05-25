@@ -13,3 +13,196 @@
     </form>
 
 {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Training Plan Service | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff5a5f 0%, #484848 100%);
+        }
+        
+        .input-focus:focus {
+            border-color: #ff5a5f;
+            box-shadow: 0 0 0 2px rgba(255, 90, 95, 0.2);
+        }
+        
+        .toggle-option {
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-option.active {
+            background-color: #ff5a5f;
+            color: white;
+        }
+        
+        .login-btn:hover {
+            background-color: #e04a4f;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="login-container bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-md">
+        <!-- Header Section -->
+        <div class="gradient-bg text-white p-8 text-center">
+            <h1 class="text-3xl font-bold mb-2">Personal Training Plan Service</h1>
+            <p class="opacity-90">Achieve your fitness goals with expert guidance</p>
+        </div>
+        
+        <!-- Role Toggle -->
+        <div class="flex border-b">
+            <div class="w-1/2 text-center">
+                <button id="coach-btn" class="toggle-option active w-full py-4 font-medium">
+                    <i class="fas fa-user-tie mr-2"></i> Coach
+                </button>
+            </div>
+            <div class="w-1/2 text-center">
+                <button id="athlete-btn" class="toggle-option w-full py-4 font-medium">
+                    <i class="fas fa-running mr-2"></i> Athlete
+                </button>
+            </div>
+        </div>
+        
+        <!-- Login Form -->
+        <div class="p-8">
+            <form id="login-form">
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-envelope text-gray-400"></i>
+                        </div>
+                        <input type="email" id="email" class="w-full pl-10 pr-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-lock text-gray-400"></i>
+                        </div>
+                        <input type="password" id="password" class="w-full pl-10 pr-4 py-3 border rounded-lg input-focus focus:outline-none" placeholder="••••••••" required>
+                        <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600" id="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-red-500 hover:text-red-700">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="w-full bg-red-500 text-white py-3 px-4 rounded-lg font-medium login-btn transition duration-300">
+                    Log In
+                </button>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">Don't have an account? <a href="#" class="text-red-500 font-medium hover:text-red-700">Sign up</a></p>
+                </div>
+            </form>
+            
+            <div class="mt-8">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <button class="w-full flex items-center justify-center py-2 px-4 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition duration-300">
+                        <i class="fab fa-google text-red-500 mr-2"></i>
+                        <span class="text-sm font-medium text-gray-700">Google</span>
+                    </button>
+                    
+                    <button class="w-full flex items-center justify-center py-2 px-4 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition duration-300">
+                        <i class="fab fa-apple text-gray-800 mr-2"></i>
+                        <span class="text-sm font-medium text-gray-700">Apple</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between coach and athlete
+        const coachBtn = document.getElementById('coach-btn');
+        const athleteBtn = document.getElementById('athlete-btn');
+        
+        coachBtn.addEventListener('click', () => {
+            coachBtn.classList.add('active');
+            athleteBtn.classList.remove('active');
+        });
+        
+        athleteBtn.addEventListener('click', () => {
+            athleteBtn.classList.add('active');
+            coachBtn.classList.remove('active');
+        });
+        
+        // Toggle password visibility
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('toggle-password');
+        const eyeIcon = togglePassword.querySelector('i');
+        
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            if (type === 'password') {
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            } else {
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            }
+        });
+        
+        // Form submission
+        const loginForm = document.getElementById('login-form');
+        
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const isCoach = coachBtn.classList.contains('active');
+            
+            // Here you would typically send the data to your backend
+            console.log({
+                email,
+                password,
+                userType: isCoach ? 'coach' : 'athlete'
+            });
+            
+            // For demo purposes, we'll just show an alert
+            alert(`Logging in as ${isCoach ? 'Coach' : 'Athlete'} with email: ${email}`);
+        });
+    </script>
+</body>
+</html>

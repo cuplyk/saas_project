@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
     "widget_tweaks",
     "slippers",
     
@@ -185,7 +186,17 @@ AUTHENTICATION_BACKENDS = [
     #...
 ]
 
+SOCIALACCOUNT_LOGIN_ON_GET = True  # Automatically log in users on social account login
+SOCIALACCOUNT_AUTO_SIGNUP = True # Automatically create user accounts on social login
+ACCOUNT_UNIQUE_EMAIL = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = "True"  # Require email verification for social accounts
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True  # Automatically connect social accounts to existing user accounts
+
+
 SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        "VERIFIED_EMAIL": True,
+    }
 
 }
 
