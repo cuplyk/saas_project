@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     "visits",
     "commando",
     "accounts",
+    "profiles",
     # third party apps
     "allauth_ui",
     'allauth',
@@ -83,6 +84,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     "widget_tweaks",
     "slippers",
+    
     
 ]
 
