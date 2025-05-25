@@ -164,7 +164,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Django Allauth Config
 
 # Email verification
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "optional"  # 'optional' or 'mandatory'
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_AUTHENTICATED_METHODS = ['email']
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[CFE]"

@@ -3,6 +3,12 @@
 {% load allauth_ui %}
 {% load widget_tweaks %}
 {% block content %}
+<head>
+    <title>
+        {% block head_title %}{% translate "Sign In" %}{% endblock %} {# Or just "Sign In" if not using i18n #}
+    </title>
+</head>
+
     {% trans "Sign In" as heading %}
     {% #container heading=heading  %}
     {% if not SOCIALACCOUNT_ONLY %}

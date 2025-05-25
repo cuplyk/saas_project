@@ -3,6 +3,11 @@
 {% load allauth_ui %}
 {% load widget_tweaks %}
 {% block content %}
+<head>
+    <title>
+        {% block head_title %}{% translate "Sign Up" %}{% endblock %} {# Or just "Sign In" if not using i18n #}
+    </title>
+</head>
     {% trans "Sign Up" as heading %}
     {% blocktranslate asvar subheading %}Already have an account? Then please <a href="{{ login_url }}" class="link">sign in</a>.{% endblocktranslate %}
     {% #container heading=heading subheading=subheading  %}
