@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 <link href="{% static '/all.min.css' %}" rel="stylesheet" />
+
+
 {% block head_title %} {{ page_title }} - {{block.super}}{% endblock %}
-<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
 
  
 {% block content %}
     <h1>{{ page_title }}</h1>
-    <p>This is the home page of your application.</p>
+    <p>This is the home page of yourq application.</p>
     {% include 'snippets/welcome-user-msg.html' %}
     <p>Current user: {{ request.user }}</p>
     <p>Request method: {{ request.method }}</p>
@@ -17,4 +19,7 @@
     <p>Percent: {{ percent }}</p>
     <p>Total page visits: {{ total_visit_count }}</p>
 
+
+
+    
 {% endblock %}

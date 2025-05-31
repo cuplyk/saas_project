@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import (
     home_views, 
+    index_views,
     about_views, 
     pw_protected_view,
     user_only_view,
@@ -17,6 +18,7 @@ urlpatterns = [
     path("register/", register_view),
     path("about/", about_views),
     path("", home_views, name="home"),
+    path("index/", index_views, name="index"),
     path("protected/", pw_protected_view),
     path("protected/user-only", user_only_view),
     path("protected/staf-only", staf_only_view),

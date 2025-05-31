@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudly - Modern Cloud Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .nav-link:hover::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: white;
+            margin: 4px auto 0;
+        }
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-cloud text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">Cloudly</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#solutions" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
+                    <a href="#pricing" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Testimonials</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium hidden md:block">Sign In</a>
+                    <a href="#" class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Get Started
+                    </a>
+                    <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+                        Cloud Solutions <br>for <span class="text-yellow-300">Modern</span> Businesses
+                    </h1>
+                    <p class="mt-3 max-w-md mx-auto text-lg text-blue-100 sm:text-xl md:mt-5 md:max-w-3xl">
+                        Streamline your operations with our powerful cloud platform. Scalable, secure, and simple to use.
+                    </p>
+                    <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+                        <div class="rounded-md shadow">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                                Start free trial
+                            </a>
+                        </div>
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 bg-opacity-60 hover:bg-opacity-70 md:py-4 md:text-lg md:px-10">
+                                Watch demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative hero-image">
+                    <img class="w-full max-w-lg mx-auto" src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="Cloud computing illustration">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients Section -->
+    <div class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
+                Trusted by innovative companies worldwide
+            </p>
+            <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+                <div class="col-span-1 flex justify-center">
+                    <img class="h-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon">
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img class="h-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png" alt="Microsoft">
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img class="h-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google">
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img class="h-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png" alt="Apple">
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img class="h-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Samsung_Logo.svg/1200px-Samsung_Logo.svg.png" alt="Samsung">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    A better way to manage your cloud
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Everything you need to deploy, manage, and scale your applications.
+                </p>
+            </div>
+
+            <div class="mt-20">
+                <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="feature-card transition-all duration-300 ease-in-out p-8 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Enterprise Security</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Military-grade encryption and compliance with the strictest security standards.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card transition-all duration-300 ease-in-out p-8 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-bolt text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Lightning Fast</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our global CDN ensures your content is delivered with the lowest latency possible.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card transition-all duration-300 ease-in-out p-8 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-expand text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Effortless Scaling</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Automatically scale your resources up or down based on demand.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card transition-all duration-300 ease-in-out p-8 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Advanced Analytics</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Real-time insights into your infrastructure performance and usage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card transition-all duration-300 ease-in-out p-8 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">AI Optimization</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our AI automatically optimizes your resources for cost and performance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card transition-all duration-300 ease-in-out p-8 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-headset text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">24/7 Support</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our team of experts is available around the clock to assist you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions Section -->
+    <div id="solutions" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-16">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Solutions</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Tailored for your business needs
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:flex-shrink-0">
+                            <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Web hosting">
+                        </div>
+                        <div class="p-8">
+                            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">Web Hosting</div>
+                            <a href="#" class="block mt-1 text-lg font-medium text-gray-900 hover:text-blue-600">High-performance hosting</a>
+                            <p class="mt-2 text-gray-500">Blazing fast web hosting with 99.9% uptime guarantee and free SSL certificates.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:flex-shrink-0">
+                            <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Database">
+                        </div>
+                        <div class="p-8">
+                            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">Database</div>
+                            <a href="#" class="block mt-1 text-lg font-medium text-gray-900 hover:text-blue-600">Managed databases</a>
+                            <p class="mt-2 text-gray-500">Fully managed SQL and NoSQL databases with automated backups and scaling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:flex-shrink-0">
+                            <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Containers">
+                        </div>
+                        <div class="p-8">
+                            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">Containers</div>
+                            <a href="#" class="block mt-1 text-lg font-medium text-gray-900 hover:text-blue-600">Kubernetes & Docker</a>
+                            <p class="mt-2 text-gray-500">Managed container orchestration with Kubernetes and Docker support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:flex-shrink-0">
+                            <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Storage">
+                        </div>
+                        <div class="p-8">
+                            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold">Storage</div>
+                            <a href="#" class="block mt-1 text-lg font-medium text-gray-900 hover:text-blue-600">Object & Block Storage</a>
+                            <p class="mt-2 text-gray-500">Highly available and durable storage solutions for any workload.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="sm:flex sm:flex-col sm:align-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center">Simple, transparent pricing</h2>
+                <p class="mt-5 text-xl text-gray-500 text-center max-w-2xl mx-auto">
+                    Choose the perfect plan for your business needs. No hidden fees.
+                </p>
+                <div class="relative mt-6 bg-gray-100 rounded-lg p-0.5 flex self-center">
+                    <button type="button" class="relative bg-white border-gray-200 rounded-md shadow-sm py-2 px-6 text-sm font-medium text-gray-900 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-blue-500 focus:z-10 sm:w-auto sm:px-8">
+                        Monthly billing
+                    </button>
+                    <button type="button" class="ml-0.5 relative border border-transparent rounded-md py-2 px-6 text-sm font-medium text-gray-700 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-blue-500 focus:z-10 sm:w-auto sm:px-8">
+                        Yearly billing
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0">
+                <div class="pricing-card transition-all duration-300 border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Starter</h2>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">$19</span>
+                            <span class="text-base font-medium text-gray-500">/mo</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Perfect for small projects and personal websites.
+                        </p>
+                        <a href="#" class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
+                            Buy Starter
+                        </a>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h3 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">1 Website</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">10GB Storage</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">100GB Bandwidth</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Basic Support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-card transition-all duration-300 border-2 border-blue-500 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Business</h2>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">$49</span>
+                            <span class="text-base font-medium text-gray-500">/mo</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Ideal for growing businesses with multiple sites.
+                        </p>
+                        <a href="#" class="mt-8 block w-full gradient-bg border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:opacity-90">
+                            Buy Business
+                        </a>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h3 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">5 Websites</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">50GB Storage</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Unlimited Bandwidth</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Priority Support</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Free CDN</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-card transition-all duration-300 border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Enterprise</h2>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">$99</span>
+                            <span class="text-base font-medium text-gray-500">/mo</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            For large scale businesses with high traffic needs.
+                        </p>
+                        <a href="#" class="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900">
+                            Buy Enterprise
+                        </a>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h3 class="text-xs font-medium text-gray-900 tracking-wide uppercase">What's included</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Unlimited Websites</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">200GB Storage</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Unlimited Bandwidth</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">24/7 VIP Support</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Free CDN & SSL</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Dedicated Resources</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="gradient-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-16">
+                <h2 class="text-base text-blue-300 font-semibold tracking-wide uppercase">Testimonials</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Trusted by thousands of businesses
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-white">Sarah Johnson</h4>
+                            <p class="text-blue-200">CTO, TechSolutions</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-blue-100">
+                        "Cloudly has transformed our infrastructure. We've reduced costs by 40% while improving performance across all our applications."
+                    </p>
+                    <div class="mt-4 flex text-yellow-300">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-white">Michael Chen</h4>
+                            <p class="text-blue-200">CEO, StartupX</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-blue-100">
+                        "The scalability and ease of use are unmatched. We went from 0 to 1 million users without any infrastructure headaches."
+                    </p>
+                    <div class="mt-4 flex text-yellow-300">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-white">Emma Rodriguez</h4>
+                            <p class="text-blue-200">Director of Engineering, GlobalCorp</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-blue-100">
+                        "Their support team is phenomenal. Any issue we've had was resolved within minutes, day or night."
+                    </p>
+                    <div class="mt-4 flex text-yellow-300">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Ready to get started?
+                    </h2>
+                    <p class="mt-3 max-w-3xl text-lg text-gray-500">
+                        Join thousands of satisfied customers who trust Cloudly for their cloud infrastructure needs.
+                    </p>
+                    <div class="mt-8 sm:flex">
+                        <div class="rounded-md shadow">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white gradient-bg hover:opacity-90 md:py-4 md:text-lg md:px-10">
+                                Get started
+                            </a>
+                        </div>
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                                Contact sales
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 lg:mt-0">
+                    <div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-8">
+                        <h3 class="text-lg font-medium text-gray-900">Schedule a demo</h3>
+                        <p class="mt-2 text-sm text-gray-500">
+                            Let us show you how Cloudly can transform your business.
+                        </p>
+                        <form class="mt-6 space-y-4">
+                            <div>
+                                <label for="name" class="sr-only">Full name</label>
+                                <input type="text" id="name" placeholder="Full name" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" id="email" placeholder="Email address" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="company" class="sr-only">Company</label>
+                                <input type="text" id="company" placeholder="Company" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <button type="submit" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white gradient-bg hover:opacity-90 md:py-4 md:text-lg md:px-10">
+                                Schedule now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center">
+                        <i class="fas fa-cloud text-blue-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-white">Cloudly</span>
+                    </div>
+                    <p class="mt-4 text-gray-300">
+                        The most trusted cloud platform for businesses of all sizes.
+                    </p>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Solutions</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Web Hosting</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Databases</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Containers</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Storage</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Guides</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">API Status</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-base text-gray-400">
+                    &copy; 2023 Cloudly, Inc. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('nav button').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Pricing toggle
+        const pricingButtons = document.querySelectorAll('.relative.mt-6 button');
+        pricingButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                pricingButtons.forEach(btn => {
+                    btn.classList.remove('bg-white', 'border-gray-200', 'text-gray-900');
+                    btn.classList.add('border', 'border-transparent', 'text-gray-700');
+                });
+                this.classList.add('bg-white', 'border-gray-200', 'text-gray-900');
+                this.classList.remove('border', 'border-transparent', 'text-gray-700');
+                
+                // Here you would update pricing based on monthly/yearly selection
+                console.log('Pricing period changed to:', this.textContent.trim());
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest! We will contact you shortly.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>

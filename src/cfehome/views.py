@@ -45,6 +45,18 @@ def about_views(request, *args, **kwargs):
     PageVisit.objects.create(path=request.path)
     return render(request, html_template, my_context)
 
+def index_views(request, *args, **kwargs):
+    """
+    This function handles the index page view.
+    It returns a simple HTML response with a welcome message.
+    """
+    my_title = "My Page"
+    my_context = {
+        "page_title": my_title,
+
+    }
+    return render(request, "index.html", my_context)
+
 VALID_CODE = "aaa1234"
 
 def pw_protected_view(request, *args, **kwargs):
