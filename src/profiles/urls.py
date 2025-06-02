@@ -7,6 +7,7 @@ from . import views
 from accounts.views import login_view, register_view
 
 urlpatterns = [
-    path("<username>/", views.profile_view, name="profile"),
+    path("", views.profile_list_views),
+    path("<username>/", views.profile_detail_view, name="profile"),
 
 ]
